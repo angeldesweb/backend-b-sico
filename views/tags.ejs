@@ -1,0 +1,11 @@
+<%- include("header") -%>
+
+<h1>Lista de etiquetas disponibles</h1>
+<hr>
+<ul>
+    <% tags.forEach(tag => { %>
+        <li class="tag" key="<%= tag.key %>"><%= tag.name %></li>
+    <% }); %>
+</ul>
+
+<%- include("footer") -%>

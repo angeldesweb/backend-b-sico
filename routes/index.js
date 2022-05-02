@@ -23,4 +23,13 @@ router.get('/', async (req,res) => {
   }
 });
 
+router.get('/tags',(req,res) => {
+  const tags = [
+    {id:1,name:'work'},
+    {id:2,name:'mobile'},
+    {id:3,name:'lifestyle'},
+    {id:4,name:'motor'}]
+    res.render('tags',{tags})
+})
+
 module.exports = router;
