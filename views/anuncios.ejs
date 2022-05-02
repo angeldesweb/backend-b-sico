@@ -24,7 +24,7 @@
           <tr>
             <td><%= anuncio.nombre %></td>
             <td><%= anuncio.venta ? 'Venta' : 'Compra' %></td>
-            <td style="text-align: right"><%= anuncio.precio / 100 %>€</td>
+            <td style="text-align: right"><%= anuncio.precio %>€</td>
             <td><img style="width:10rem;" src="<%= anuncio.imagen %>" /></td>
             <td><%= anuncio.tags %></td>
             <td><%= anuncio._id %></td>
@@ -38,8 +38,8 @@
       <ul>
         <li><a href="?">Todos (max. 1000)</a></li>
         <li><a href="?start=2&limit=2">Paginado</a></li>
-        <li><a href="?max=12">Hasta 0.12€</a></li>
-        <li><a href="?min=12">Desde  0.12€</a></li>
+        <li><a href="?max=12">Hasta 12€</a></li>
+        <li><a href="?min=12">Desde  12€</a></li>
         <li><a href="?tag=mobile">Con tag mobile</a></li>
       </ul>
 
