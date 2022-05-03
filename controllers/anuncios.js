@@ -27,7 +27,19 @@ const getAnuncios = async (req,res,next) => {
     }
 };
 
+const createAnuncio = async (req,res,next) => {
+    try {
+        const { body } = req;
+        const anuncio = new Anuncio(body);
+        await anuncio.save();
+        return res.status(200).send({ok:true,message:'Registro exitoso'});
+    } catch (error) {
+        next(error);
+    }
+}
+
 module.exports = {
     anunciosQuery,
-    getAnuncios
+    getAnuncios,
+    createAnuncio
 };

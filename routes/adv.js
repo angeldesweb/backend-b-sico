@@ -9,7 +9,6 @@ adv.get('/', async (req, res, next) => {
         const args = {...query};
         const resp = await anunciosQuery(args);
         if(resp.total === 0) return res.render('empty');
-        console.log(resp.rows);
         return res.render('anuncios',{total:resp.total,anuncios: resp.result.rows});
     } catch(err){
         return next(err); 

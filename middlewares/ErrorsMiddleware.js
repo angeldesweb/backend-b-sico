@@ -1,7 +1,6 @@
 const createError = require('http-errors');
 
 function NotFoundMiddleware (req, res, next) {
-    console.log(req);
     next(createError(404));
 }
 

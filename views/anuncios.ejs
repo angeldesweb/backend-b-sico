@@ -25,7 +25,9 @@
             <td><%= anuncio.nombre %></td>
             <td><%= anuncio.venta ? 'Venta' : 'Compra' %></td>
             <td style="text-align: right"><%= anuncio.precio %>€</td>
-            <td><img style="width:10rem;" src="<%= anuncio.imagen %>" /></td>
+            <td>
+              <img class="img-thumbnail"  style="width:10rem;" src="<%= anuncio.imagen %>">
+            </td>
             <td><%= anuncio.tags %></td>
             <td><%= anuncio._id %></td>
           </tr>
