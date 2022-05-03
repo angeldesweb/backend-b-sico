@@ -51,5 +51,10 @@
   <a href="/">Volver a inicio</a>
 
 </div>
-
+<script>
+  const images = document.querySelectorAll('img');
+  images.forEach(image => {
+    if(image.naturalHeight === 0) image.src = '/images/Not.png'
+  });
+</script>
 <%- include("footer") -%>
