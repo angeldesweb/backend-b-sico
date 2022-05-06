@@ -12,7 +12,7 @@
     <div class="col-md-12">
       <table class="table table-hover">
         <thead><tr>
-          <th>Nombre</th>
+          <th style="width:25rem;">Nombre</th>
           <th>Modo</th>
           <th style="text-align: right">Precio</th>
           <th>Foto</th>
@@ -22,7 +22,7 @@
         <tbody>
 <% anuncios.forEach((anuncio) => { %>
           <tr>
-            <td><%= anuncio.nombre %></td>
+            <td style="width:25rem;"><%= anuncio.nombre %></td>
             <td><%= anuncio.venta ? 'Venta' : 'Compra' %></td>
             <td style="text-align: right"><%= anuncio.precio %>€</td>
             <td>
@@ -54,7 +54,12 @@
 <script>
   const images = document.querySelectorAll('img');
   images.forEach(image => {
-    if(image.naturalHeight === 0) image.src = '/images/Not.png'
-  });
+    image.addEventListener('load',() => {
+      if(image.naturalWidth === 0) image.src = '/images/Not.png';
+      image.style.width = '150px';
+      image.style.height = '150px';
+    })
+  })
+
 </script>
 <%- include("footer") -%>

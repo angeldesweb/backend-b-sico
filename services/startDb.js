@@ -1,9 +1,10 @@
+require('dotenv').config();
 let { connection , connect } = require('mongoose');
 const db = connection;
 
 Promise = global.Promise;
 
-const dbUrl = process.env.DB || 'mongodb://localhost:27017/nodepop';
+const dbUrl = process.env.DB;
 
 db.on('error', function (error) {
   console.error(`Error en la conexión de MONGODB: ${error}`);
